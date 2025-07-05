@@ -12,6 +12,16 @@ body{
     background-color: seashell;
 }
 
+button {
+    padding: 0.1rem 0.5rem;
+    font-size: 1.05rem;
+    color: rgb(0, 13, 15);
+    background-color: rgb(241, 188, 119);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
 header {
     display: flex;
     justify-content: space-between;

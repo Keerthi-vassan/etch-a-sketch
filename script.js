@@ -3,10 +3,20 @@ const sketchpad = document.querySelector('div.sketchpad');
 const b25 = document.querySelector('#g25');
 const b50 = document.querySelector('#g50');
 const b100 = document.querySelector('#g100');
+const customButton = document.querySelector('#custom');
 
 b25.addEventListener('click', () => { createGrid(25); });
 b50.addEventListener('click', () => { createGrid(50); });
 b100.addEventListener('click', () => { createGrid(100); });
+customButton.addEventListener('click', () => {
+    let size = prompt("Enter grid size (between 1 and 100):");
+    size = parseInt(size);
+    if (size >= 1 && size <= 100) {
+        createGrid(size);
+    } else {
+        alert("Please enter a valid number between 1 and 100.");
+    }
+});
 
 function createGrid(size) {
     sketchpad.innerHTML = ''; 
