@@ -24,13 +24,26 @@ function createGrid(size) {
         for (let col = 0; col < size; col++) {
             const cell = document.createElement('div');
             cell.classList.add('cell');
-            cell.style.flex = '1'; // Use flex-grow to dynamically adjust cell size';
+            cell.style.flex = '1'; 
             cell.addEventListener('mouseenter', () => {
-                cell.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+                let color = cell.style.backgroundColor;
+
+                // Set random color if the cell has no background color
+                if (!color || color === 'white') {
+                    cell.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+                    cell.style.opacity = '0.1';
+                }
+
+                // Increase opacity gradually
+                let opacity = parseFloat(cell.style.opacity);
+                if (opacity < 1) {
+                    cell.style.opacity = (opacity + 0.1).toString();
+                }
             });
-            rowDiv.appendChild(cell);
+            rowDiv.appendChild(cell);     
         }
         sketchpad.appendChild(rowDiv);
     }
 }
+
 

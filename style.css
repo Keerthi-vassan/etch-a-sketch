@@ -9,6 +9,7 @@ body{
     align-items: center;
     justify-content: space-around;
     padding-bottom: 5rem;
+    background-color: seashell;
 }
 
 header {
@@ -30,7 +31,7 @@ p {
     text-wegiht: bold;
 }
 
-div.options {
+div.option {
     display: flex;
     gap: 1rem;
 }
@@ -38,7 +39,7 @@ div.options {
 .main {
     width: 700px;
     height: 700px;
-    background-color: rgb(100, 39, 39);
+    background-color: white;
     border: 5px solid black; /* Optional: makes it visible even if empty */
 }
 
